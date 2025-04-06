@@ -1,0 +1,14 @@
+<header class="app-header" *ngIf="selectedEnvironment"> <div class="header-content">
+    <div class="header-left">
+      </div>
+    <div class="header-right">
+      <span class="environment-display">
+        Environment: <strong>{{ selectedEnvironment }}</strong>
+      </span>
+    </div>
+  </div>
+</header>
+
+<main class="content-area">
+  <router-outlet></router-outlet>
+</main>
