@@ -1,0 +1,29 @@
+<div class="dashboard-container">
+  <div class="header">
+    <h1>Accounts ({{ filteredAccounts.length }})</h1>
+    <div class="actions">
+      <input
+        type="text"
+        placeholder="Search accounts by name"
+        [(ngModel)]="searchTerm"
+        (ngModelChange)="onSearchChange()"
+        class="search-input"
+      />
+      <button (click)="addAccount()" class="add-button">
+        + Add Account
+      </button>
+    </div>
+  </div>
+
+  <ul class="account-list">
+    <li *ngIf="filteredAccounts.length === 0 && searchTerm" class="no-results">
+      No accounts found matching "{{ searchTerm }}".
+    </li>
+     <li *ngIf="filteredAccounts.length === 0 && !searchTerm" class="no-results">
+      No accounts available.
+    </li>
+    <li *ngFor="let account of filteredAccounts">
+      {{ account.name }}
+      </li>
+  </ul>
+</div>
