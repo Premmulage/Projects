@@ -1,0 +1,27 @@
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root' // Makes the service a singleton available application-wide
+})
+export class EnvironmentService {
+  // BehaviorSubject holds the current value (initially null)
+  // and emits it immediately to new subscribers.
+  private selectedEnvironmentSubject = new BehaviorSubject<string | null>(null);
+
+  // Public observable that components can subscribe to. '$' suffix is a convention.
+  selectedEnvironment$: Observable<string | null> = this.selectedEnvironmentSubject.asObservable();
+
+  constructor() { }
+
+  // Method for components to call when an environment is selected
+  setEnvironment(environment: string): void {
+    this.selectedEnvironmentSubject.next(environment); // Emit the new value
+    console.log(`Environment set in service: ${environment}`);
+  }
+
+  // Optional: Get the current value synchronously (use observable preferably)
+  getCurrentEnvironment(): string | null {
+    return this.selectedEnvironmentSubject.getValue();
+  }
+}
