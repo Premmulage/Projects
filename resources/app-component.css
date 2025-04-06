@@ -1,0 +1,51 @@
+.app-header {
+  background-color: #f0f0f0; /* A light grey background */
+  padding: 8px 25px;       /* Padding top/bottom and left/right */
+  border-bottom: 1px solid #dcdcdc; /* A subtle border */
+  height: 45px;            /* Fixed height */
+  box-sizing: border-box;  /* Include padding and border in height */
+  width: 100%;             /* Take full width */
+}
+
+.header-content {
+  display: flex;             /* Use flexbox for layout */
+  justify-content: space-between; /* Push left and right content apart */
+  align-items: center;     /* Vertically center items */
+  height: 100%;            /* Take full height of parent header */
+  /* Optional: Limit width and center for very wide screens */
+  /* max-width: 1400px; */
+  /* margin: 0 auto; */
+}
+
+.header-left {
+  /* Placeholder for future content on the left */
+  flex-grow: 1; /* Allow left side to grow if needed */
+}
+
+.header-right {
+  /* Content stays on the right */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.environment-display {
+  font-size: 14px;         /* Adjust font size */
+  color: #555;            /* Text color */
+}
+
+.environment-display strong {
+  color: #0056b3;         /* Highlight the environment name */
+  font-weight: 600;
+  margin-left: 5px;      /* Space between "Environment:" and the value */
+}
+
+.content-area {
+  padding: 15px 25px; /* Add some padding around the main content */
+}
+
+/* Optional: Basic body reset */
+/*
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+*/
